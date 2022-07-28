@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Cotización {% endblock %}
+
+{% block content %}
+
+<h2>Cotización del Dólar (dolarsi.com)</h2>
+<div class="d-flex align-content-start flex-wrap">
+    {% for valor in res %}
+    <div class="card text-dark bg-light mb-3" style="max-width: 18rem; min-width:150px;margin:5px;">
+        <div class="card-header">{{ valor['casa']['nombre'] }}</div>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <span style="margin-right: 10px;
+                font-weight: bold;">
+                    Compra:
+                </span>
+                {{ valor['casa']['compra'] }}
+            </li>
+            <li class="list-group-item">
+                <span style="margin-right: 10px;
+                font-weight: bold;">
+                    Venta:
+                </span>
+                {{ valor['casa']['venta'] }}
+            </li>
+        </ul>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
