@@ -23,10 +23,10 @@ def cotizacion():
 
     res = requests.get('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
     
-    if res:
-        print(res.json())
-    else:
-        print('Response Failed')
+    # if res:
+    #     print(res.json())
+    # else:
+    #     print('Response Failed')
 
     return render_template(template_name, res=res.json())
 
